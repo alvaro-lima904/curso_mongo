@@ -1,0 +1,11 @@
+{
+    "nome": "Toninho",
+    "idade": 19, 
+    "gostaDe": ["Futebol", "Brincar", "Video Game"],
+    "trabalha": true,
+    "materias": {
+        "portugues": 8.9,
+        "matematica": 9.2,
+        "historia": 2.4
+    }
+}
