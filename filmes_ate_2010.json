@@ -1,0 +1,33 @@
+// db.netflix.find({
+//     "release_year": {
+//         $lte: 2010
+//     }},
+//     {
+//         "title": 1,
+//         "release_year": 1
+//     }
+// )
+
+db.netflix.aggregate([
+    {
+        $addFields: {
+            "year_added": {
+                $year: "$date_added"
+            }
+        }
+    },
+    {
+        $match: {
+            "year_added": {
+                $lte: 2010
+            }
+        }
+    },
+    {
+        $project: {
+            "_id": 0,
+            "title": 1,
+            "year_added": 1
+        }
+    }
+])
